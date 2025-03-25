@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions and Objects</title>
+</head>
+<body>
+    <script>
+ 
+        const checkoutBook = (title, author, isAvailable) => {
+            if (isAvailable) {
+                alert(`You have checked out "${title}" by ${author}.`);
+                return { title, author, isAvailable: false }; 
+            } else {
+                alert(`Sorry, "${title}" by ${author} is not available.`);
+                return { title, author, isAvailable };  
+            }
+        };
+
+   
+        let book1 = checkoutBook("Alice in Wonderland", "Lewis Carroll", true);
+        let book2 = checkoutBook("Harry Potter", "J.K. Rowling", false);
+        let book3 = checkoutBook("The Hobbit", "J.R.R. Tolkien", true);
+    </script>
+</body>
+</html>

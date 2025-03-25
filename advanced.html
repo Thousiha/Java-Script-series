@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+</head>
+<body>
+    <h1>User Dashboard</h1>
+    <div id="dashboard"></div>
+
+    <script>
+        async function loadUsersAndPosts() {
+            try {
+                const usersRes = await fetch("https://jsonplaceholder.typicode.com/users");
+                const postsRes = await fetch("https://jsonplaceholder.typicode.com/posts");
+
+                const users = await usersRes.json();
+                const posts = await postsRes.json();
+
+                document.getElementById("dashboard").innerHTML = users.map(user => {
+                    const userPosts = posts.filter(post => post.userId === user.id)
+                                           .map(post => `<li>${post.title}</li>`).join("");
+
+                    return `<h2>${user.name}</h2><ul>${userPosts}</ul>`;
+                }).join("");
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        }
+
+        loadUsersAndPosts();
+    </script>
+</body>
+</html>

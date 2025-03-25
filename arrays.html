@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     const tasks = [
+            { name: "Submit report", isCompleted: false, dueDate: "2024-03-20" },
+            { name: "Fix bugs", isCompleted: true, dueDate: "2024-03-22" },
+            { name: "Update documentation", isCompleted: false, dueDate: "2025-04-01" },
+            { name: "Attend team meeting", isCompleted: true, dueDate: "2025-03-25" },
+            { name: "Deploy new feature", isCompleted: false, dueDate: "2024-03-18" }
+        ];
+        function getIncompleteTasks(taskList) {
+            return taskList.filter(task => !task.isCompleted);
+        }
+        const today = new Date().toISOString().split("T")[0]; 
+        const transformedTasks = tasks.map(function(task) {
+            if (task.dueDate < today) {
+                return { ...task, name: `[Overdue] ${task.name}` };
+            }
+            return task;
+        });
+        const totalTasks = () => tasks.length;
+
+
+        const completedTaskCount = () => tasks.filter(task => task.isCompleted).length;
+
+       console.log("Incomplete Tasks:", getIncompleteTasks(tasks));
+       console.log("Transformed Tasks:", transformedTasks);
+       console.log("Total Tasks:", totalTasks());
+       console.log("Completed Tasks:", completedTaskCount());
+    </script>
+</body>
+</html>

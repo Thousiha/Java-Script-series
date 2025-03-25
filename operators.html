@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount Checker</title>
+</head>
+<body>
+    <script>
+        function cust(log_det, membership, validity) {
+            let discount = (log_det && membership === 'Gold' && validity) ? 20 : 0;
+            alert(discount > 0 ? `Possible discount is ${discount}%` : "No discount available.");
+        }
+    
+   
+        cust(true, 'Gold', true);   
+        cust(true, 'Silver', true); 
+        cust(false, 'Gold', true);  
+        </script>
+</body>
+</html>

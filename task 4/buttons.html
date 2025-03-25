@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button actions</title>
+</head>
+<style>
+    body{
+        display:flex;
+        flex-direction:row;
+        flex-wrap: wrap;
+        margin:0;
+        margin-left:10px;
+    }
+    img{
+        padding:15px 12px;
+        margin:20px 29px;
+        border:14px solid black;
+        width: 200px; /* Set desired width */
+        height: 200px; /* Set desired height */
+        object-fit: cover;
+
+        
+    }
+    img:hover {
+            border: 12px solid yellowgreen
+        }
+</style>
+<body>
+    <img src="C:\Java script\task 4\img1.jpg">
+    <button onclick="likeImage(this)">Like ❤️ <span>0</span></button>
+    <img src="C:\Java script\task 4\img2.jpg">
+     <button onclick="likeImage(this)">Like ❤️ <span>0</span></button>
+    <img src="C:\Java script\task 4\img3.jpg">
+    <button onclick="likeImage(this)">Like ❤️ <span>0</span></button>
+    <img src="C:\Java script\task 4\img4.jpg">
+    <button onclick="likeImage(this)">Like ❤️ <span>0</span></button>
+    <img src="C:\Java script\task 4\img5.jpg">
+    <button onclick="likeImage(this)">Like ❤️ <span>0</span></button>
+    <img src="C:\Java script\task 4\img7jpg">
+    <button onclick="likeImage(this)">Like ❤️ <span>0</span></button>
+    <img src="C:\Java script\task 4\img9.jpg">
+    <button onclick="likeImage(this)">Like ❤️ <span>0</span></button>
+    <img src="C:\Java script\task 4\img10.jpg">
+    <button onclick="likeImage(this)">Like ❤️ <span>0</span></button>
+
+
+    <script>
+         function likeImage(button) {
+            let count = button.querySelector("span");  
+            count.textContent = parseInt(count.textContent) + 1;  }
+    </script>
+</body>
+</html>
